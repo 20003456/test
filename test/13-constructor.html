@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            constructor : 
+                + 构造器! 
+                + 是每一个函数天生自带的那个prototype里面有一个属性,
+                + 叫做constructor
+                + 这个属性就指向这个原型的构造函数.
+                + 谁的prototype里面的constructor就指向谁.
+                + 这个构造函数的实例去访问constructor的时候.
+                + 得到的就是我的名字存储的那个地址.
+            + 它也可以帮我们检测数据类型.
+        */
+
+        function Person(){}
+        console.log(Person.prototype);
+        const p1 = new Person();
+        //p1 去访问 constructor 的时候,自己没有.
+        //去 Person.prototype上找,找到了.
+        //Person的prototype的constructor就指向 Person
+        console.log(p1.constructor);
+
+        /*
+            当一个数组去访问constructor的时候,自己没有.
+            应该去到Array上的prototype上找.
+            Array的prototype上有constructor的属性.指向Array.
+            [].constructor === Array.
+        
+        */
+        const arr = {};
+        console.log(arr.constructor===Object);
+    </script>
+</body>
+</html>
